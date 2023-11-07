@@ -2,6 +2,7 @@ import random
 from PyQt5 import QtWidgets, QtGui, QtCore
 from PyQt5.QtMultimedia import QSound
 from PyQt5.QtGui import QMovie
+import os
 import sys
 import time
 from UI import Ui_MainWindow
@@ -15,7 +16,8 @@ import tensorflow as tf
 from tensorflow import keras
 from sklearn.preprocessing import scale
 
-file_path = r'C:\Users\user\Downloads\NSL_GUI\\'
+current_path = os.path.abspath(__file__)
+file_path = os.path.dirname(current_path) + "\\"
 
 AE = keras.models.load_model(f'{file_path}AE_MODEL')
 DNN = keras.models.load_model(f'{file_path}DNN_MODEL')
